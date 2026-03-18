@@ -228,26 +228,46 @@
     @apply border-border;
   }
 
+  /* ── Flutter WebView Safe Area Variables ── */
+  :root {
+    --flutter-safe-top: 0px;
+    --flutter-safe-bottom: 0px;
+    --flutter-safe-left: 0px;
+    --flutter-safe-right: 0px;
+
+    --safe-top: max(env(safe-area-inset-top, 0px), var(--flutter-safe-top));
+    --safe-bottom: max(env(safe-area-inset-bottom, 0px), var(--flutter-safe-bottom));
+    --safe-left: max(env(safe-area-inset-left, 0px), var(--flutter-safe-left));
+    --safe-right: max(env(safe-area-inset-right, 0px), var(--flutter-safe-right));
+  }
+
   html {
-    /* Prevent WebView overscroll bounce */
+    height: 100%;
+    overflow: hidden;
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
-    /* Prevent pull-to-refresh in Chrome Android WebView */
-    overflow-y: auto;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    height: 100%;
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     overscroll-behavior-y: none;
     -webkit-touch-callout: none;
-    /* WebView native illusion */
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  #root {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   h1, h2, h3, h4, h5, h6 {
