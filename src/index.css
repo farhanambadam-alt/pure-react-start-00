@@ -339,7 +339,7 @@
 
   /* Safe-area-aware bottom padding for pages with bottom nav */
   .pb-safe {
-    padding-bottom: calc(max(env(safe-area-inset-bottom, 0px), 12px) + 80px);
+    padding-bottom: calc(var(--safe-bottom, 0px) + 80px);
   }
 
   /* CSS animations for background dots/sparkles — replaces SVG <animate> */
