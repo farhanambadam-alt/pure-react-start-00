@@ -36,7 +36,7 @@ const HomePage = () => {
   );
 
   return (
-    <div id="main-content" className="min-h-screen pb-safe">
+    <div className="min-h-0 pb-safe">
       <AppHeader />
 
       {/* Gender Toggle + Heading */}

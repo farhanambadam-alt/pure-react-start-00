@@ -19,9 +19,9 @@ const CartPill = () => {
 
   return (
     <div
-      className="fixed z-[55] left-1/2 -translate-x-1/2 md:max-w-md animate-[slide-up_0.3s_ease-out]"
+      className="absolute z-[55] left-1/2 -translate-x-1/2 md:max-w-md animate-[slide-up_0.3s_ease-out]"
       style={{
-        bottom: 'calc(max(env(safe-area-inset-bottom, 0px), 12px) + 76px)',
+        bottom: 'calc(var(--safe-bottom, 0px) + 76px)',
       }}
     >
       <button
