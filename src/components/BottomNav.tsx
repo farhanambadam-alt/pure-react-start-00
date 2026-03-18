@@ -52,9 +52,9 @@ const BottomNav = () => {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none md:bottom-4"
+      className="w-full flex justify-center pointer-events-none"
       style={{
-        paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 12px)',
+        paddingBottom: 'var(--safe-bottom, 0px)',
       }}
     >
       <div
